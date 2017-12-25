@@ -14,8 +14,8 @@ class EmailLog extends Migration
     {
         Schema::create('email_log', function (Blueprint $table) {
             $table->dateTime('date');
-            $table->string('to');
-            $table->string('subject');
+            $table->text('to');
+            $table->text('subject');
             $table->text('body');
         });
     }

@@ -12,8 +12,8 @@ class AddBccColumnEmailLog extends Migration
     public function up()
     {
         Schema::table('email_log', function ($table) {
-            $table->string('to')->nullable()->change();
-            $table->string('bcc')->after('to')->nullable();
+            $table->text('to')->nullable()->change();
+            $table->text('bcc')->after('to')->nullable();
         });
     }
 
@@ -25,7 +25,7 @@ class AddBccColumnEmailLog extends Migration
     public function down()
     {
         Schema::table('email_log', function ($table) {
-            $table->string('to')->change();
+            $table->text('to')->change();
             $table->dropColumn('bcc');
         });
     }

@@ -13,8 +13,8 @@ class AddMoreMailColumnsEmailLog extends Migration
     {
         Schema::table('email_log', function ($table) {
             $table->increments('id')->first();
-            $table->string('from')->after('date')->nullable();
-            $table->string('cc')->after('to')->nullable();
+            $table->text('from')->after('date')->nullable();
+            $table->text('cc')->after('to')->nullable();
             $table->text('headers')->after('body')->nullable();
             $table->text('attachments')->after('headers')->nullable();
         });
